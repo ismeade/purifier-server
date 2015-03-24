@@ -2,6 +2,7 @@ package com.ade.purifier.utils;
 
 /**
  * Created by ismeade on 2014/9/21.
+ *
  */
 public class ByteUtils {
 
