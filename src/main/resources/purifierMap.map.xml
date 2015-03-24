@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map xmlns="http://cayenne.apache.org/schema/3.0/modelMap"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://cayenne.apache.org/schema/3.0/modelMap http://cayenne.apache.org/schema/3.0/modelMap.xsd"
+	 project-version="6">
+	<property name="defaultPackage" value="com.ade.purifier.orm.model"/>
+	<property name="defaultSchema" value="touchcell"/>
+	<db-entity name="MAC_INFO" schema="touchcell">
+		<db-attribute name="area" type="VARCHAR" length="32"/>
+		<db-attribute name="city" type="VARCHAR" length="32"/>
+		<db-attribute name="cityId" type="VARCHAR" length="20"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="latitude" type="DOUBLE"/>
+		<db-attribute name="longitude" type="DOUBLE"/>
+		<db-attribute name="mac" type="VARCHAR" isMandatory="true" length="32"/>
+		<db-attribute name="md5" type="VARCHAR" length="32"/>
+		<db-attribute name="name" type="VARCHAR" length="20"/>
+	</db-entity>
+	<db-entity name="MAC_STATE" schema="touchcell">
+		<db-attribute name="filter_age" type="INTEGER"/>
+		<db-attribute name="filter_replace_warn" type="INTEGER"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="indoor_humidity" type="INTEGER"/>
+		<db-attribute name="indoor_proper" type="INTEGER"/>
+		<db-attribute name="indoor_temperature" type="INTEGER"/>
+		<db-attribute name="mac_age" type="INTEGER"/>
+		<db-attribute name="mac_gear" type="INTEGER"/>
+		<db-attribute name="mac_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="mac_run" type="INTEGER"/>
+		<db-attribute name="mac_run_model" type="INTEGER"/>
+		<db-attribute name="mac_timing" type="INTEGER"/>
+		<db-attribute name="nions_state" type="INTEGER"/>
+		<db-attribute name="panel_open_warn" type="INTEGER"/>
+		<db-attribute name="smell_c" type="INTEGER"/>
+		<db-attribute name="tipping_warn" type="INTEGER"/>
+		<db-attribute name="update_time" type="DATE"/>
+		<db-attribute name="uv_state" type="INTEGER"/>
+	</db-entity>
+	<db-entity name="MAC_STATE_HIS" schema="touchcell">
+		<db-attribute name="date" type="DATE"/>
+		<db-attribute name="fine_pm" type="INTEGER"/>
+		<db-attribute name="humidity" type="INTEGER"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="mac_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="out_btime" type="VARCHAR" length="4"/>
+		<db-attribute name="out_etime" type="VARCHAR" length="4"/>
+		<db-attribute name="smell" type="INTEGER"/>
+		<db-attribute name="temperature" type="INTEGER"/>
+	</db-entity>
+	<db-entity name="MAC_STRATEGY" schema="touchcell">
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="mac_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="out_btime" type="VARCHAR" length="4"/>
+		<db-attribute name="out_etime" type="VARCHAR" length="4"/>
+		<db-attribute name="sleep_btime" type="VARCHAR" length="4"/>
+		<db-attribute name="sleep_etime" type="VARCHAR" length="4"/>
+		<db-attribute name="standard" type="INTEGER" length="3"/>
+		<db-attribute name="update_time" type="DATE"/>
+	</db-entity>
+	<db-entity name="OUTDOOR_POLLUTION" schema="touchcell">
+		<db-attribute name="canop_window" type="INTEGER" length="1"/>
+		<db-attribute name="high_temperature" type="INTEGER" length="3"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="low_temperature" type="INTEGER" length="3"/>
+		<db-attribute name="mac_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="rain" type="INTEGER" length="1"/>
+		<db-attribute name="update_time" type="DATE"/>
+	</db-entity>
+	<db-entity name="SOFT_INFO" schema="touchcell">
+		<db-attribute name="appVersion" type="VARCHAR" length="32"/>
+		<db-attribute name="createTime" type="TIMESTAMP"/>
+		<db-attribute name="fileName" type="VARCHAR" length="128"/>
+		<db-attribute name="fileUrl" type="VARCHAR" length="256"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="isSenior" type="BOOLEAN"/>
+		<db-attribute name="md5" type="VARCHAR" length="32"/>
+		<db-attribute name="os" type="VARCHAR" length="32"/>
+		<db-attribute name="osVersion" type="VARCHAR" length="32"/>
+		<db-attribute name="size" type="INTEGER"/>
+	</db-entity>
+	<db-entity name="SYS_PAGE" schema="touchcell">
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="page" type="VARCHAR" length="32"/>
+		<db-attribute name="role_id" type="INTEGER"/>
+	</db-entity>
+	<db-entity name="SYS_ROLE" schema="touchcell">
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="roleName" type="VARCHAR" length="20"/>
+	</db-entity>
+	<db-entity name="SYS_USER" schema="touchcell">
+		<db-attribute name="createTime" type="SMALLINT"/>
+		<db-attribute name="email" type="VARCHAR" length="32"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="password" type="VARCHAR" length="32"/>
+		<db-attribute name="role" type="INTEGER"/>
+		<db-attribute name="userName" type="VARCHAR" length="16"/>
+	</db-entity>
+	<db-entity name="USER_COORDINATES" schema="touchcell">
+		<db-attribute name="area" type="VARCHAR" length="32"/>
+		<db-attribute name="city" type="VARCHAR" length="32"/>
+		<db-attribute name="cityId" type="VARCHAR" length="20"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="latitude" type="DOUBLE" isMandatory="true"/>
+		<db-attribute name="longitude" type="DOUBLE" isMandatory="true"/>
+		<db-attribute name="update_time" type="DATE" isMandatory="true"/>
+		<db-attribute name="user_id" type="INTEGER" isMandatory="true"/>
+	</db-entity>
+	<db-entity name="USER_INFO" schema="touchcell">
+		<db-attribute name="email" type="VARCHAR" isMandatory="true" length="50"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="mobile" type="VARCHAR" isMandatory="true" length="11"/>
+		<db-attribute name="password" type="VARCHAR" isMandatory="true" length="32"/>
+		<db-attribute name="update_time" type="TIMESTAMP" isMandatory="true"/>
+	</db-entity>
+	<db-entity name="USER_MAC" schema="touchcell">
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="mac_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="user_id" type="INTEGER" isMandatory="true"/>
+	</db-entity>
+	<db-entity name="USER_OPT_HIS" schema="touchcell">
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="mac_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="opt_time" type="DATE" isMandatory="true"/>
+		<db-attribute name="user_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="user_opt" type="INTEGER" isMandatory="true"/>
+	</db-entity>
+	<db-entity name="WEATHER_AIR" schema="touchcell">
+		<db-attribute name="city" type="VARCHAR" length="32"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="pm" type="INTEGER"/>
+		<db-attribute name="time" type="TIMESTAMP"/>
+	</db-entity>
+	<db-entity name="WEATHER_INFO" schema="touchcell">
+		<db-attribute name="city" type="VARCHAR" length="32"/>
+		<db-attribute name="cityId" type="VARCHAR" length="16"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="sd" type="INTEGER"/>
+		<db-attribute name="temp1" type="INTEGER"/>
+		<db-attribute name="temp2" type="INTEGER"/>
+		<db-attribute name="time" type="TIMESTAMP"/>
+		<db-attribute name="wd" type="VARCHAR" length="16"/>
+		<db-attribute name="weather" type="VARCHAR" length="32"/>
+		<db-attribute name="ws" type="VARCHAR" length="16"/>
+	</db-entity>
+	<obj-entity name="MacInfo" className="com.ade.purifier.orm.model.MacInfo" dbEntityName="MAC_INFO">
+		<obj-attribute name="area" type="java.lang.String" db-attribute-path="area"/>
+		<obj-attribute name="city" type="java.lang.String" db-attribute-path="city"/>
+		<obj-attribute name="cityId" type="java.lang.String" db-attribute-path="cityId"/>
+		<obj-attribute name="latitude" type="java.lang.Double" db-attribute-path="latitude"/>
+		<obj-attribute name="longitude" type="java.lang.Double" db-attribute-path="longitude"/>
+		<obj-attribute name="mac" type="java.lang.String" db-attribute-path="mac"/>
+		<obj-attribute name="md5" type="java.lang.String" db-attribute-path="md5"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
+	<obj-entity name="MacState" className="com.ade.purifier.orm.model.MacState" dbEntityName="MAC_STATE">
+		<obj-attribute name="filterAge" type="java.lang.Integer" db-attribute-path="filter_age"/>
+		<obj-attribute name="filterReplaceWarn" type="java.lang.Integer" db-attribute-path="filter_replace_warn"/>
+		<obj-attribute name="indoorHumidity" type="java.lang.Integer" db-attribute-path="indoor_humidity"/>
+		<obj-attribute name="indoorProper" type="java.lang.Integer" db-attribute-path="indoor_proper"/>
+		<obj-attribute name="indoorTemperature" type="java.lang.Integer" db-attribute-path="indoor_temperature"/>
+		<obj-attribute name="macAge" type="java.lang.Integer" db-attribute-path="mac_age"/>
+		<obj-attribute name="macGear" type="java.lang.Integer" db-attribute-path="mac_gear"/>
+		<obj-attribute name="macId" type="java.lang.Integer" db-attribute-path="mac_id"/>
+		<obj-attribute name="macRun" type="java.lang.Integer" db-attribute-path="mac_run"/>
+		<obj-attribute name="macRunModel" type="java.lang.Integer" db-attribute-path="mac_run_model"/>
+		<obj-attribute name="macTiming" type="java.lang.Integer" db-attribute-path="mac_timing"/>
+		<obj-attribute name="nionsState" type="java.lang.Integer" db-attribute-path="nions_state"/>
+		<obj-attribute name="panelOpenWarn" type="java.lang.Integer" db-attribute-path="panel_open_warn"/>
+		<obj-attribute name="smellC" type="java.lang.Integer" db-attribute-path="smell_c"/>
+		<obj-attribute name="tippingWarn" type="java.lang.Integer" db-attribute-path="tipping_warn"/>
+		<obj-attribute name="updateTime" type="java.util.Date" db-attribute-path="update_time"/>
+		<obj-attribute name="uvState" type="java.lang.Integer" db-attribute-path="uv_state"/>
+	</obj-entity>
+	<obj-entity name="MacStateHis" className="com.ade.purifier.orm.model.MacStateHis" dbEntityName="MAC_STATE_HIS">
+		<obj-attribute name="date" type="java.util.Date" db-attribute-path="date"/>
+		<obj-attribute name="finePm" type="java.lang.Integer" db-attribute-path="fine_pm"/>
+		<obj-attribute name="humidity" type="java.lang.Integer" db-attribute-path="humidity"/>
+		<obj-attribute name="macId" type="java.lang.Integer" db-attribute-path="mac_id"/>
+		<obj-attribute name="outBtime" type="java.lang.String" db-attribute-path="out_btime"/>
+		<obj-attribute name="outEtime" type="java.lang.String" db-attribute-path="out_etime"/>
+		<obj-attribute name="smell" type="java.lang.Integer" db-attribute-path="smell"/>
+		<obj-attribute name="temperature" type="java.lang.Integer" db-attribute-path="temperature"/>
+	</obj-entity>
+	<obj-entity name="MacStrategy" className="com.ade.purifier.orm.model.MacStrategy" dbEntityName="MAC_STRATEGY">
+		<obj-attribute name="macId" type="java.lang.Integer" db-attribute-path="mac_id"/>
+		<obj-attribute name="outBtime" type="java.lang.String" db-attribute-path="out_btime"/>
+		<obj-attribute name="outEtime" type="java.lang.String" db-attribute-path="out_etime"/>
+		<obj-attribute name="sleepBtime" type="java.lang.String" db-attribute-path="sleep_btime"/>
+		<obj-attribute name="sleepEtime" type="java.lang.String" db-attribute-path="sleep_etime"/>
+		<obj-attribute name="standard" type="java.lang.Integer" db-attribute-path="standard"/>
+		<obj-attribute name="updateTime" type="java.util.Date" db-attribute-path="update_time"/>
+	</obj-entity>
+	<obj-entity name="OutdoorPollution" className="com.ade.purifier.orm.model.OutdoorPollution" dbEntityName="OUTDOOR_POLLUTION">
+		<obj-attribute name="canopWindow" type="java.lang.Integer" db-attribute-path="canop_window"/>
+		<obj-attribute name="highTemperature" type="java.lang.Integer" db-attribute-path="high_temperature"/>
+		<obj-attribute name="lowTemperature" type="java.lang.Integer" db-attribute-path="low_temperature"/>
+		<obj-attribute name="macId" type="java.lang.Integer" db-attribute-path="mac_id"/>
+		<obj-attribute name="rain" type="java.lang.Integer" db-attribute-path="rain"/>
+		<obj-attribute name="updateTime" type="java.util.Date" db-attribute-path="update_time"/>
+	</obj-entity>
+	<obj-entity name="SoftInfo" className="com.ade.purifier.orm.model.SoftInfo" dbEntityName="SOFT_INFO">
+		<obj-attribute name="appVersion" type="java.lang.String" db-attribute-path="appVersion"/>
+		<obj-attribute name="createTime" type="java.util.Date" db-attribute-path="createTime"/>
+		<obj-attribute name="fileName" type="java.lang.String" db-attribute-path="fileName"/>
+		<obj-attribute name="fileUrl" type="java.lang.String" db-attribute-path="fileUrl"/>
+		<obj-attribute name="isSenior" type="java.lang.Boolean" db-attribute-path="isSenior"/>
+		<obj-attribute name="md5" type="java.lang.String" db-attribute-path="md5"/>
+		<obj-attribute name="os" type="java.lang.String" db-attribute-path="os"/>
+		<obj-attribute name="osVersion" type="java.lang.String" db-attribute-path="osVersion"/>
+		<obj-attribute name="size" type="java.lang.Integer" db-attribute-path="size"/>
+	</obj-entity>
+	<obj-entity name="SysPage" className="com.ade.purifier.orm.model.SysPage" dbEntityName="SYS_PAGE">
+		<obj-attribute name="page" type="java.lang.String" db-attribute-path="page"/>
+		<obj-attribute name="roleId" type="java.lang.Integer" db-attribute-path="role_id"/>
+	</obj-entity>
+	<obj-entity name="SysRole" className="com.ade.purifier.orm.model.SysRole" dbEntityName="SYS_ROLE">
+		<obj-attribute name="roleName" type="java.lang.String" db-attribute-path="roleName"/>
+	</obj-entity>
+	<obj-entity name="SysUser" className="com.ade.purifier.orm.model.SysUser" dbEntityName="SYS_USER">
+		<obj-attribute name="createTime" type="java.lang.Short" db-attribute-path="createTime"/>
+		<obj-attribute name="email" type="java.lang.String" db-attribute-path="email"/>
+		<obj-attribute name="password" type="java.lang.String" db-attribute-path="password"/>
+		<obj-attribute name="role" type="java.lang.Integer" db-attribute-path="role"/>
+		<obj-attribute name="userName" type="java.lang.String" db-attribute-path="userName"/>
+	</obj-entity>
+	<obj-entity name="UserCoordinates" className="com.ade.purifier.orm.model.UserCoordinates" dbEntityName="USER_COORDINATES">
+		<obj-attribute name="area" type="java.lang.String" db-attribute-path="area"/>
+		<obj-attribute name="city" type="java.lang.String" db-attribute-path="city"/>
+		<obj-attribute name="cityId" type="java.lang.String" db-attribute-path="cityId"/>
+		<obj-attribute name="latitude" type="java.lang.Double" db-attribute-path="latitude"/>
+		<obj-attribute name="longitude" type="java.lang.Double" db-attribute-path="longitude"/>
+		<obj-attribute name="updateTime" type="java.util.Date" db-attribute-path="update_time"/>
+		<obj-attribute name="userId" type="java.lang.Integer" db-attribute-path="user_id"/>
+	</obj-entity>
+	<obj-entity name="UserInfo" className="com.ade.purifier.orm.model.UserInfo" dbEntityName="USER_INFO">
+		<obj-attribute name="email" type="java.lang.String" db-attribute-path="email"/>
+		<obj-attribute name="mobile" type="java.lang.String" db-attribute-path="mobile"/>
+		<obj-attribute name="password" type="java.lang.String" db-attribute-path="password"/>
+		<obj-attribute name="updateTime" type="java.util.Date" db-attribute-path="update_time"/>
+	</obj-entity>
+	<obj-entity name="UserMac" className="com.ade.purifier.orm.model.UserMac" dbEntityName="USER_MAC">
+		<obj-attribute name="macId" type="java.lang.Integer" db-attribute-path="mac_id"/>
+		<obj-attribute name="userId" type="java.lang.Integer" db-attribute-path="user_id"/>
+	</obj-entity>
+	<obj-entity name="UserOptHis" className="com.ade.purifier.orm.model.UserOptHis" dbEntityName="USER_OPT_HIS">
+		<obj-attribute name="macId" type="java.lang.Integer" db-attribute-path="mac_id"/>
+		<obj-attribute name="optTime" type="java.util.Date" db-attribute-path="opt_time"/>
+		<obj-attribute name="userId" type="java.lang.Integer" db-attribute-path="user_id"/>
+		<obj-attribute name="userOpt" type="java.lang.Integer" db-attribute-path="user_opt"/>
+	</obj-entity>
+	<obj-entity name="WeatherAir" className="com.ade.purifier.orm.model.WeatherAir" dbEntityName="WEATHER_AIR">
+		<obj-attribute name="city" type="java.lang.String" db-attribute-path="city"/>
+		<obj-attribute name="pm" type="java.lang.Integer" db-attribute-path="pm"/>
+		<obj-attribute name="time" type="java.util.Date" db-attribute-path="time"/>
+	</obj-entity>
+	<obj-entity name="WeatherInfo" className="com.ade.purifier.orm.model.WeatherInfo" dbEntityName="WEATHER_INFO">
+		<obj-attribute name="city" type="java.lang.String" db-attribute-path="city"/>
+		<obj-attribute name="cityId" type="java.lang.String" db-attribute-path="cityId"/>
+		<obj-attribute name="sd" type="java.lang.Integer" db-attribute-path="sd"/>
+		<obj-attribute name="temp1" type="java.lang.Integer" db-attribute-path="temp1"/>
+		<obj-attribute name="temp2" type="java.lang.Integer" db-attribute-path="temp2"/>
+		<obj-attribute name="time" type="java.util.Date" db-attribute-path="time"/>
+		<obj-attribute name="wd" type="java.lang.String" db-attribute-path="wd"/>
+		<obj-attribute name="weather" type="java.lang.String" db-attribute-path="weather"/>
+		<obj-attribute name="ws" type="java.lang.String" db-attribute-path="ws"/>
+	</obj-entity>
+</data-map>

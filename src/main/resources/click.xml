@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<click-app charset="UTF-8">
+	<pages package="com.ade.purifier.service.web.pages" />
+
+	<mode value="debug" />
+</click-app>

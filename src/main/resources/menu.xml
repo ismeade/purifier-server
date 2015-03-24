@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<menu>
+
+	<menu label="HOME" path="index.htm" />
+	
+	<menu label="净化器">
+		<menu label="在线净化器" path="pur/purifierOnline.htm" />
+		<menu label="净化器信息" path="pur/purifierInfo.htm" />
+	</menu>
+    <menu label="用户">
+        <menu label="用户管理" path="pur/purifierInfo.htm" />
+    </menu>
+    <menu label="系统">
+        <menu label="账户管理" path="sys/sysUserInfo.htm" />
+        <menu label="角色管理" path="sys/sysRoleInfo.htm" />
+    </menu>
+
+	<menu label="登出" path="logOut.htm" />
+</menu>
