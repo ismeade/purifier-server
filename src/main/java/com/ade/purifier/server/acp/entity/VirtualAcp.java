@@ -152,10 +152,12 @@ public class VirtualAcp {
                         }
                     } else {
                         VirtualAcpManager.removeVirtualAcp(session.getId());
+                        break;
                     }
                     Thread.sleep(1800 * 1000);
                 } catch (InterruptedException e) {
                     logger.error(e.getLocalizedMessage(), e);
+                    break;
                 }
             }
 
